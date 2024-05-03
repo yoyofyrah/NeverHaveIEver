@@ -16,7 +16,6 @@ Never Have I Ever is a party game where players take turns making statements abo
 
 ## System Requirements
 - **OS**: Whatever you'd like to export it to.
-- **Graphics**: It's just text and lines.
 - **Network**: LAN
 
 ## Credits
