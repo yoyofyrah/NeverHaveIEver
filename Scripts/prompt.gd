@@ -8,6 +8,7 @@ var wait_switch = 0
 var number_of_peers
 var answer = {}
 
+# readies the game for all users
 func _ready() -> void:
 	$WaitScreen.hide()
 	$ResponseO.hide()
