@@ -1,0 +1,208 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxe88b5efva4u"]
+
+[ext_resource type="Script" path="res://Scripts/promptSimple.gd" id="1_lc3g2"]
+[ext_resource type="LabelSettings" uid="uid://dhjc55akh26ql" path="res://Assets/unified_font.tres" id="2_w26by"]
+[ext_resource type="FontFile" uid="uid://75mxgkof6h18" path="res://Assets/Dosis v1.7/Dosis-Bold.ttf" id="3_6mmp1"]
+[ext_resource type="FontFile" uid="uid://pe5bmocdoog7" path="res://Assets/Kaph_Font_1_10/OpenType (.otf)/Kaph-Regular.otf" id="4_xm36t"]
+[ext_resource type="PackedScene" uid="uid://co0aeaxo8flbu" path="res://Scenes/MultiplayerController.tscn" id="5_jx74r"]
+[ext_resource type="LabelSettings" uid="uid://bo4egwpio4v4c" path="res://Assets/64_font_size_set.tres" id="6_kmgy6"]
+
+[node name="Prompt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lc3g2")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="NHIE" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = -396.0
+offset_right = 69.0
+offset_bottom = -319.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.86238, 1.86238)
+text = "Never Have I Ever..."
+label_settings = ExtResource("2_w26by")
+horizontal_alignment = 1
+
+[node name="AnswerInput" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 368.0
+offset_top = -704.0
+offset_right = -400.0
+offset_bottom = -576.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_6mmp1")
+theme_override_font_sizes/font_size = 72
+placeholder_text = "Hit em' with your best secrets"
+alignment = 1
+caret_blink = true
+
+[node name="AnswerScreen" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 968.0
+offset_top = 432.0
+offset_right = 968.0
+offset_bottom = 432.0
+scale = Vector2(0.65, 0.65)
+color = Color(0, 0, 0, 1)
+
+[node name="AnswerLabel" type="Label" parent="AnswerScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1255.0
+offset_top = -223.0
+offset_right = 1292.0
+offset_bottom = 554.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_xm36t")
+theme_override_font_sizes/font_size = 108
+text = "answer goes here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DrinksLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1480.0
+offset_top = 24.0
+offset_right = 1817.0
+offset_bottom = 146.0
+text = "Drinks:"
+label_settings = ExtResource("2_w26by")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1752.0
+offset_top = 24.0
+offset_right = 1905.0
+offset_bottom = 146.0
+text = "0"
+label_settings = ExtResource("2_w26by")
+horizontal_alignment = 2
+
+[node name="ResponseX" type="Button" parent="."]
+layout_mode = 2
+offset_left = 745.0
+offset_top = 824.0
+offset_right = 920.0
+offset_bottom = 954.0
+theme_override_fonts/font = ExtResource("4_xm36t")
+theme_override_font_sizes/font_size = 96
+text = "X"
+
+[node name="ResponseO" type="Button" parent="."]
+layout_mode = 2
+offset_left = 976.0
+offset_top = 824.0
+offset_right = 1136.0
+offset_bottom = 954.0
+theme_override_fonts/font = ExtResource("4_xm36t")
+theme_override_font_sizes/font_size = 96
+text = "O"
+
+[node name="WaitScreen" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="WaitLabel" type="Label" parent="WaitScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "waiting for everyone to submit..."
+label_settings = ExtResource("2_w26by")
+horizontal_alignment = 1
+
+[node name="Scoreboard" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreNames" type="VBoxContainer" parent="Scoreboard"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 728.0
+offset_right = 298.0
+offset_bottom = 1048.0
+
+[node name="User1" type="Label" parent="Scoreboard/ScoreNames"]
+layout_mode = 2
+text = "user1"
+label_settings = ExtResource("6_kmgy6")
+
+[node name="User2" type="Label" parent="Scoreboard/ScoreNames"]
+layout_mode = 2
+text = "user2"
+label_settings = ExtResource("6_kmgy6")
+
+[node name="User3" type="Label" parent="Scoreboard/ScoreNames"]
+layout_mode = 2
+text = "user3"
+label_settings = ExtResource("6_kmgy6")
+
+[node name="User4" type="Label" parent="Scoreboard/ScoreNames"]
+layout_mode = 2
+text = "user4"
+label_settings = ExtResource("6_kmgy6")
+
+[node name="MultiplayerController" parent="." instance=ExtResource("5_jx74r")]
+layout_mode = 1
+
+[connection signal="text_submitted" from="AnswerInput" to="." method="_on_answer_input_text_submitted"]
+[connection signal="pressed" from="ResponseX" to="." method="_on_response_x_pressed"]
+[connection signal="pressed" from="ResponseO" to="." method="_on_response_o_pressed"]
+[connection signal="pressed" from="MultiplayerController/HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="MultiplayerController/JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="MultiplayerController/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MultiplayerController/SubmitNameButton" to="." method="_on_submit_name_button_pressed"]
+[connection signal="pressed" from="MultiplayerController/SyncButton" to="." method="_on_sync_button_pressed"]
+[connection signal="pressed" from="MultiplayerController/PlayerWaitScreen/TwoPlayers" to="." method="_on_two_players_pressed"]
+[connection signal="pressed" from="MultiplayerController/PlayerWaitScreen/ThreePlayers" to="." method="_on_three_players_pressed"]
+[connection signal="pressed" from="MultiplayerController/PlayerWaitScreen/FourPlayers" to="." method="_on_four_players_pressed"]
+
+[editable path="MultiplayerController"]

@@ -1,0 +1,239 @@
+[gd_scene load_steps=7 format=3 uid="uid://co0aeaxo8flbu"]
+
+[ext_resource type="FontFile" uid="uid://75mxgkof6h18" path="res://Assets/Dosis v1.7/Dosis-Bold.ttf" id="3_j7fcp"]
+[ext_resource type="FontFile" uid="uid://cwx0srjs3yxgy" path="res://Assets/Dosis v1.7/Dosis-ExtraBold.ttf" id="3_lihc1"]
+[ext_resource type="FontFile" uid="uid://pe5bmocdoog7" path="res://Assets/Kaph_Font_1_10/OpenType (.otf)/Kaph-Regular.otf" id="3_lvtrh"]
+[ext_resource type="LabelSettings" uid="uid://dhjc55akh26ql" path="res://Assets/unified_font.tres" id="3_t34p6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_644ia"]
+font = ExtResource("3_lihc1")
+font_size = 52
+
+[sub_resource type="LabelSettings" id="LabelSettings_kl5l1"]
+font = ExtResource("3_lvtrh")
+font_size = 64
+
+[node name="MultiplayerController" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HostButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 504.0
+offset_right = 592.0
+offset_bottom = 604.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_j7fcp")
+theme_override_font_sizes/font_size = 72
+text = "Host"
+
+[node name="JoinButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 512.0
+offset_right = 1264.0
+offset_bottom = 612.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_j7fcp")
+theme_override_font_sizes/font_size = 72
+text = "Join"
+
+[node name="NHIE" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -808.0
+offset_top = -436.0
+offset_right = 61.0
+offset_bottom = -314.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.86238, 1.86238)
+text = "Never Have I Ever..."
+label_settings = ExtResource("3_t34p6")
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 752.0
+offset_top = 504.0
+offset_right = 936.0
+offset_bottom = 604.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_j7fcp")
+theme_override_font_sizes/font_size = 72
+text = "Start"
+
+[node name="NameInput" type="LineEdit" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 920.0
+offset_bottom = 600.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_j7fcp")
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Who even are you?"
+alignment = 1
+
+[node name="WaitingStartButton" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = -12.0
+offset_right = 1026.0
+offset_bottom = 110.0
+grow_vertical = 2
+scale = Vector2(1.86238, 1.86238)
+text = "waiting for host to start..."
+label_settings = SubResource("LabelSettings_644ia")
+horizontal_alignment = 1
+
+[node name="SubmitNameButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 808.0
+offset_top = 720.0
+offset_right = 1028.0
+offset_bottom = 820.0
+scale = Vector2(1.3, 1.3)
+theme_override_fonts/font = ExtResource("3_j7fcp")
+theme_override_font_sizes/font_size = 72
+text = "Submit"
+
+[node name="SyncButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 704.0
+offset_top = 720.0
+offset_right = 1083.0
+offset_bottom = 820.0
+scale = Vector2(1.3, 1.3)
+theme_override_fonts/font = ExtResource("3_j7fcp")
+theme_override_font_sizes/font_size = 72
+text = "Sync Players"
+
+[node name="PlayerWaitScreen" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PlayerWaitText" type="Label" parent="PlayerWaitScreen"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = -332.0
+offset_right = 1026.0
+offset_bottom = -255.0
+grow_vertical = 2
+scale = Vector2(1.86238, 1.86238)
+text = "How many players?"
+label_settings = SubResource("LabelSettings_644ia")
+horizontal_alignment = 1
+
+[node name="TwoPlayers" type="Button" parent="PlayerWaitScreen"]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 472.0
+offset_right = 811.0
+offset_bottom = 582.0
+scale = Vector2(1.3, 1.3)
+theme_override_fonts/font = ExtResource("3_j7fcp")
+theme_override_font_sizes/font_size = 80
+text = "2
+"
+
+[node name="ThreePlayers" type="Button" parent="PlayerWaitScreen"]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 472.0
+offset_right = 995.0
+offset_bottom = 582.0
+scale = Vector2(1.3, 1.3)
+theme_override_fonts/font = ExtResource("3_j7fcp")
+theme_override_font_sizes/font_size = 80
+text = "3
+"
+
+[node name="FourPlayers" type="Button" parent="PlayerWaitScreen"]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 472.0
+offset_right = 1179.0
+offset_bottom = 582.0
+scale = Vector2(1.3, 1.3)
+theme_override_fonts/font = ExtResource("3_j7fcp")
+theme_override_font_sizes/font_size = 80
+text = "4
+"
+
+[node name="P1" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1090.0
+offset_top = 920.0
+offset_right = 1186.0
+offset_bottom = 1016.0
+
+[node name="P2" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1282.0
+offset_top = 920.0
+offset_right = 1378.0
+offset_bottom = 1016.0
+
+[node name="P3" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1474.0
+offset_top = 920.0
+offset_right = 1570.0
+offset_bottom = 1016.0
+
+[node name="P4" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1658.0
+offset_top = 920.0
+offset_right = 1754.0
+offset_bottom = 1016.0
+
+[node name="ConnectedPlayers" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 160.0
+offset_top = 936.0
+offset_right = 1099.0
+offset_bottom = 1028.0
+text = "connected players: "
+label_settings = SubResource("LabelSettings_kl5l1")

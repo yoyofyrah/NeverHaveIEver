@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5v85mb5g0c7j"]
+
+[ext_resource type="FontFile" uid="uid://75mxgkof6h18" path="res://Assets/Dosis v1.7/Dosis-Bold.ttf" id="1_s1oqg"]
+
+[node name="Options" type="Button"]
+offset_left = 32.0
+offset_top = 958.0
+offset_right = 256.0
+offset_bottom = 1048.0
+theme_override_fonts/font = ExtResource("1_s1oqg")
+theme_override_font_sizes/font_size = 64
+text = "Options"
